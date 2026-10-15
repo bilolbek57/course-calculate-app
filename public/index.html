@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduFlow — O‘quv markaz CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="loginView" class="login-shell">
+    <div class="login-art">
+      <div class="brand brand-light"><span class="brand-mark">E</span><span>EduFlow<span class="brand-dot">.</span></span></div>
+      <div class="login-copy">
+        <span class="eyebrow">EDUCATION MANAGEMENT</span>
+        <h1>O‘quv markazingiz<br><em>bitta joyda.</em></h1>
+        <p>Guruhlar, o‘quvchilar, davomat va moliyaviy nazorat — barchasi bir tizimda.</p>
+      </div>
+      <div class="art-bottom"><span>01 / MANAGEMENT</span><span>SMARTER LEARNING</span></div>
+    </div>
+    <div class="login-panel">
+      <div class="login-form-wrap">
+        <div class="mobile-brand brand"><span class="brand-mark">E</span><span>EduFlow<span class="brand-dot">.</span></span></div>
+        <span class="eyebrow">XUSH KELIBSIZ</span>
+        <h2>Tizimga kirish</h2>
+        <p class="muted">Davom etish uchun login va parolingizni kiriting.</p>
+        <form id="loginForm">
+          <label>Login<input id="loginUsername" autocomplete="username" required placeholder="Loginni kiriting"></label>
+          <label>Parol<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Parolni kiriting"></label>
+          <div id="loginError" class="form-error"></div>
+          <button class="btn btn-primary btn-full" type="submit">Tizimga kirish <span>↗</span></button>
+        </form>
+        <div class="login-foot">Xavfsiz boshqaruv paneli <span>●</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand brand-light"><span class="brand-mark">E</span><span>EduFlow<span class="brand-dot">.</span></span></div>
+      <div class="side-label">ASOSIY MENYU</div>
+      <nav id="navMenu">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-item" data-page="groups"><span class="nav-icon">▤</span> Guruhlar</button>
+        <button class="nav-item" data-page="students"><span class="nav-icon">♙</span> O‘quvchilar</button>
+        <button class="nav-item" data-page="debtors"><span class="nav-icon">◉</span> Qarzdorlar <span id="debtNavBadge" class="nav-badge">!</span></button>
+        <button class="nav-item" data-page="attendance"><span class="nav-icon">☑</span> Davomat</button>
+        <button class="nav-item admin-only" data-page="payments"><span class="nav-icon">↗</span> To‘lovlar</button>
+        <button class="nav-item admin-only" data-page="finance"><span class="nav-icon">◈</span> Kirim-chiqim</button>
+        <button class="nav-item admin-only" data-page="teachers"><span class="nav-icon">♧</span> O‘qituvchilar</button>
+        <button class="nav-item admin-only" data-page="reports"><span class="nav-icon">▥</span> Hisobotlar</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>EduFlow yordam</strong><p>Ma’lumotlaringizni muntazam zaxiralab boring.</p></div>
+        <button id="logoutBtn" class="logout-btn"><span>⇥</span> Tizimdan chiqish</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuToggle" class="icon-btn mobile-menu">☰</button>
+        <div class="breadcrumb"><span>EduFlow</span><b>/</b><strong id="pageCrumb">Dashboard</strong></div>
+        <div class="topbar-right"><div class="today-pill" id="todayLabel"></div><div class="user-avatar" id="userAvatar">A</div><div class="user-meta"><strong id="userName">Admin</strong><span id="userRole">Administrator</span></div></div>
+      </header>
+      <div id="pageContent" class="page-content"></div>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
